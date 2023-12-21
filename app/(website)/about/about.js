@@ -34,14 +34,14 @@ export default function About({ authors, settings }) {
                 )}
               {/* </Link> */}
             {/* </div> */}
-              <h5 style={{position: 'absolute', bottom: 0, textAlign: "center", backgroundColor: "grey", color: "white", width: "100%"}}>{author?.name}</h5>
+              <h5 style={{position: 'absolute', bottom: 0, textAlign: "center", backgroundColor: "grey", color: "white", width: "100%", fontSize: "15px"}}>{author?.name}</h5>
             </div>
             </>
           );
         })}
       </div>
 
-      <div className="prose mx-auto mt-14 text-center dark:prose-invert">
+      {/* <div className="prose mx-auto mt-14 text-center dark:prose-invert">
         <p>
           We provide real-time connectivity to enable software
           providers and financial institutions to build integrated
@@ -56,7 +56,7 @@ export default function About({ authors, settings }) {
         <p>
           <Link href="/contact">Get in touch</Link>
         </p>
-      </div>
+      </div> */}
     </Container>
   );
 }
