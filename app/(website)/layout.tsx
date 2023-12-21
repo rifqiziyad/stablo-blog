@@ -5,22 +5,25 @@ import Navbar from "@/components/navbar";
 
 async function sharedMetaData(params) {
   const settings = await getSettings();
-
+  
   return {
     // enable this for resolving opengraph image
     // metadataBase: new URL(settings.url),
     title: {
-      default: "01mate002",
+      default:
+        settings?.title || "01mate002",
       // template: "%s | Stablo"
     },
-    description: "kelas 01mate002 nih boss senggol dong",
+    description: settings?.description || "kelas 01Mate002 nih boss senggol dong" ,
     keywords: ["Unpam", "Matematika", "01mate002"],
     authors: [{ name: "Rifqi Ziyad Imtinan" }],
     canonical: settings?.url,
     openGraph: {
       images: [
         {
-          url: "https://media-cgk1-1.cdn.whatsapp.net/v/t61.24694-24/370304405_616659050663819_5900385321440311476_n.jpg?ccb=11-4&oh=01_AdRhF1xd0-8biKIeV5GYswl6iU3KRqFjr1bRXOdzmXBE2Q&oe=6590ACE1&_nc_sid=e6ed6c&_nc_cat=111",
+          url:
+            urlForImage(settings?.openGraphImage)?.src ||
+            "/img/opengraph.jpg",
           width: 800,
           height: 600
         }
@@ -41,7 +44,7 @@ export default async function Layout({ children, params }) {
   const settings = await getSettings();
   return (
     <>
-      <Navbar {...settings} logo={"https://media-cgk1-1.cdn.whatsapp.net/v/t61.24694-24/370304405_616659050663819_5900385321440311476_n.jpg?ccb=11-4&oh=01_AdRhF1xd0-8biKIeV5GYswl6iU3KRqFjr1bRXOdzmXBE2Q&oe=6590ACE1&_nc_sid=e6ed6c&_nc_cat=111"} />
+      <Navbar {...settings} />
 
       <div>{children}</div>
 
