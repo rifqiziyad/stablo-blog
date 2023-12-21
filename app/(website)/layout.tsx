@@ -13,9 +13,7 @@ async function sharedMetaData(params) {
       default: "01mate002",
       // template: "%s | Stablo"
     },
-    description:
-      settings?.description ||
-      "Stablo - popular open-source next.js and sanity blog template",
+    description: "kelas 01mate002 nih boss senggol dong",
     keywords: ["Unpam", "Matematika", "01mate002"],
     authors: [{ name: "Rifqi Ziyad Imtinan" }],
     canonical: settings?.url,
