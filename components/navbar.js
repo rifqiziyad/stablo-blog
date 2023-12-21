@@ -12,6 +12,25 @@ import { myLoader } from "@/utils/all";
 
 export default function Navbar(props) {
   const leftmenu = [
+    // {
+    //   label: "Home",
+    //   href: "/"
+    // },
+    // {
+    //   label: "About",
+    //   href: "/about"
+    // },
+    // {
+    //   label: "Archive",
+    //   href: "/archive"
+    // },
+    // {
+    //   label: "Contact",
+    //   href: "/contact"
+    // }
+  ];
+
+  const rightmenu = [
     {
       label: "Home",
       href: "/"
@@ -21,27 +40,20 @@ export default function Navbar(props) {
       href: "/about"
     },
     {
-      label: "Contact",
-      href: "/contact"
-    }
-  ];
-
-  const rightmenu = [
-    {
       label: "Archive",
       href: "/archive"
     },
-    {
-      label: "Pro Version",
-      href: "https://stablo-pro.web3templates.com/",
-      external: true,
-      badge: "new"
-    },
-    {
-      label: "Download",
-      href: "https://web3templates.com/templates/stablo-minimal-blog-website-template",
-      external: true
-    }
+    // {
+    //   label: "Pro Version",
+    //   href: "https://stablo-pro.web3templates.com/",
+    //   external: true,
+    //   badge: "new"
+    // },
+    // {
+    //   label: "Download",
+    //   href: "https://web3templates.com/templates/stablo-minimal-blog-website-template",
+    //   external: true
+    // }
   ];
 
   const mobilemenu = [...leftmenu, ...rightmenu];
@@ -53,40 +65,21 @@ export default function Navbar(props) {
           {({ open }) => (
             <>
               <div className="flex flex-wrap justify-between md:flex-nowrap md:gap-10">
-                <div className="order-1 hidden w-full flex-col items-center justify-start md:order-none md:flex md:w-auto md:flex-1 md:flex-row md:justify-end">
-                  {leftmenu.map((item, index) => (
-                    <Fragment key={`${item.label}${index}`}>
-                      {item.children && item.children.length > 0 ? (
-                        <DropdownMenu
-                          menu={item}
-                          key={`${item.label}${index}`}
-                          items={item.children}
-                        />
-                      ) : (
-                        <Link
-                          href={item.href}
-                          key={`${item.label}${index}`}
-                          className="px-5 py-2 text-sm font-medium text-gray-600 hover:text-blue-500 dark:text-gray-400"
-                          target={item.external ? "_blank" : ""}
-                          rel={item.external ? "noopener" : ""}>
-                          {item.label}
-                        </Link>
-                      )}
-                    </Fragment>
-                  ))}
-                </div>
-                <div className="flex w-full items-center justify-between md:w-auto">
+              <div className="flex w-full items-center justify-between md:w-auto">
                   <Link href="/" className="w-28 dark:hidden">
                     {props.logo ? (
                       <Image
-                        {...urlForImage(props.logo)}
+                        // {...urlForImage(props.logo)}
+                        src={"https://media-cgk1-1.cdn.whatsapp.net/v/t61.24694-24/370304405_616659050663819_5900385321440311476_n.jpg?ccb=11-4&oh=01_AdRhF1xd0-8biKIeV5GYswl6iU3KRqFjr1bRXOdzmXBE2Q&oe=6590ACE1&_nc_sid=e6ed6c&_nc_cat=111"}
+                        width={50}
+                        height={50}
                         alt="Logo"
                         priority={true}
                         sizes="(max-width: 640px) 100vw, 200px"
                       />
                     ) : (
                       <span className="block text-center">
-                        Stablo
+                        01mate002
                       </span>
                     )}
                   </Link>
@@ -128,7 +121,31 @@ export default function Navbar(props) {
                   </Disclosure.Button>
                 </div>
 
-                <div className="order-2 hidden w-full flex-col items-center justify-start md:order-none md:flex md:w-auto md:flex-1 md:flex-row">
+                <div className="order-1 hidden w-full flex-col items-center justify-start md:order-none md:flex md:w-auto md:flex-1 md:flex-row md:justify-end">
+                  {leftmenu.map((item, index) => (
+                    <Fragment key={`${item.label}${index}`}>
+                      {item.children && item.children.length > 0 ? (
+                        <DropdownMenu
+                          menu={item}
+                          key={`${item.label}${index}`}
+                          items={item.children}
+                        />
+                      ) : (
+                        <Link
+                          href={item.href}
+                          key={`${item.label}${index}`}
+                          className="px-5 py-2 text-sm font-medium text-gray-600 hover:text-blue-500 dark:text-gray-400"
+                          target={item.external ? "_blank" : ""}
+                          rel={item.external ? "noopener" : ""}>
+                          {item.label}
+                        </Link>
+                      )}
+                    </Fragment>
+                  ))}
+                </div>
+                
+
+                <div className="order-2 hidden w-full flex-col items-center justify-end md:order-none md:flex md:w-auto md:flex-1 md:flex-row">
                   {rightmenu.map((item, index) => (
                     <Fragment key={`${item.label}${index}`}>
                       {item.children && item.children.length > 0 ? (

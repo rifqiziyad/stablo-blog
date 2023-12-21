@@ -9,18 +9,20 @@ export default function About({ authors, settings }) {
       <h1 className="text-brand-primary mb-3 mt-2 text-center text-3xl font-semibold tracking-tight dark:text-white lg:text-4xl lg:leading-snug">
         About
       </h1>
-      <div className="text-center">
+      {/* <div className="text-center">
         <p className="text-lg">We are a small passionate team.</p>
-      </div>
+      </div> */}
 
       <div className="mb-16 mt-6 grid grid-cols-3 gap-5 md:mb-32 md:mt-16 md:gap-16">
-        {authors.slice(0, 3).map(author => {
+        {authors.map(author => {
           const imageProps = urlForImage(author?.image) || null;
           return (
+            <>
+            {/* <div> */}
             <div
               key={author._id}
-              className="relative aspect-square overflow-hidden rounded-md bg-slate-50 odd:translate-y-10 odd:md:translate-y-16">
-              <Link href={`/author/${author?.slug}`}>
+              className="relative aspect-square overflow-hidden rounded-md bg-slate-50 mb-5">
+              {/* <Link href={`/author/${author?.slug}`}> */}
                 {imageProps && (
                   <Image
                     src={imageProps?.src}
@@ -30,8 +32,11 @@ export default function About({ authors, settings }) {
                     className="object-cover"
                   />
                 )}
-              </Link>
+              {/* </Link> */}
+            {/* </div> */}
+              <h5 style={{position: 'absolute', bottom: 0, textAlign: "center", backgroundColor: "grey", color: "white", width: "100%"}}>{author?.name}</h5>
             </div>
+            </>
           );
         })}
       </div>
