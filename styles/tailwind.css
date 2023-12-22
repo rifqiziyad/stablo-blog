@@ -7,3 +7,7 @@
 /*! purgecss end ignore */
 
 /*Custom Styles Here*/
+
+ul > li > a > span {
+  word-wrap: break-word;
+}
