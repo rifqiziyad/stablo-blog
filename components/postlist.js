@@ -30,7 +30,7 @@ export default function PostList({
         )}>
         <div
           className={cx(
-            " overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105   dark:bg-gray-800"
+            " overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105   dark:bg-gray-800 wrapper-content"
           )}>
           <Link
             className={cx(
@@ -55,7 +55,7 @@ export default function PostList({
                 priority={preloadImage ? true : false}
                 className="object-cover transition-all"
                 fill
-                sizes="(max-width: 768px) 30vw, 33vw"
+                sizes="(max-width: 768px) 10vw, 33vw"
               />
             ) : (
               <span className="absolute left-1/2 top-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 text-gray-200">
@@ -130,8 +130,11 @@ export default function PostList({
                       />
                     )}
                   </div>
-                  <span className="truncate text-sm">
-                    {post?.author?.name}
+                  <span className="truncate text-sm authors-text">
+                    {/* {post?.author?.name.length > 25 ? `${post?.author?.name.slice(0,20)}...` : post?.author?.name} */}
+                    <span>
+                      {post?.author?.name}
+                    </span>
                   </span>
                 </div>
               </Link>

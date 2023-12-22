@@ -11,3 +11,14 @@
 ul > li > a > span {
   word-wrap: break-word;
 }
+
+@media only screen and (max-width: 600px) {
+  .authors-text {
+    width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #505050;
+  }
+}
+
